@@ -1,0 +1,46 @@
+.job {
+  margin-top: 50px;
+
+  > svg {
+    margin: -50px 0 0 -50px;
+  }
+  .job__details {
+    h6 {
+      margin-right: 10px;
+      font-size: 20px;
+      color: gray;
+      svg {
+        font-size: 20px;
+        color: #b2e521;
+      }
+    }
+  }
+  .job__cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b2e521;
+    border-radius: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 200px;
+    max-width: 300px;
+    width: 15vw;
+    text-align: center;
+  }
+  .job__link {
+    overflow: hidden;
+    p {
+      width: 80wv;
+
+      a {
+        width: 80wv;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}

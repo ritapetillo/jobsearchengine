@@ -3,12 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.4",
     "@testing-library/user-event": "^12.6.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "i": "^0.3.6",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.11",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-ipgeolocation": "^1.4.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "usegeoip": "^0.1.5",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -34,5 +48,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://jobs.github.com"
 }
