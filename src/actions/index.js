@@ -23,7 +23,7 @@ export const searchJobs = (position, location) => async (dispatch) => {
   } catch (err) {}
 };
 
-export const addToFavorite = (favorite) => (dispatch) => {
+export const addToFavorite = (favorite) => (dispatch,getState) => {
   dispatch({
     type: ADD_TO_FAVORITE,
     payload: favorite,

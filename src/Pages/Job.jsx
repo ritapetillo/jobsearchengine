@@ -26,8 +26,23 @@ const Job = ({ match, history }) => {
   return (
     <div className="job">
       <ArrowBackIosIcon onClick={() => history.goBack()} />
+
       <Row className="flex-column">
-        <h3>{job.title}</h3>
+        <div className="d-flex justify-content-between">
+          <h3>{job.title}</h3>
+          <a
+            target="_blank"
+            href={
+              job.how_to_apply &&
+              job.how_to_apply
+                .replace('<p><a href="', "")
+                .replace("</a></p>\n", "")
+            }
+          >
+            <span className="job__cta-btn ">Apply Now</span>
+          </a>
+        </div>
+
         <div className="job__details d-flex">
           <h6>
             <BusinessIcon /> {job.company}
@@ -48,19 +63,6 @@ const Job = ({ match, history }) => {
             }}
           />
         }
-      </Row>
-      <Row>
-        <a
-          target="_blank"
-          href={
-            job.how_to_apply &&
-            job.how_to_apply
-              .replace('<p><a href="', "")
-              .replace("</a></p>\n", "")
-          }
-        >
-          <span className="job__cta-btn ">Apply Now</span>
-        </a>
       </Row>
     </div>
   );

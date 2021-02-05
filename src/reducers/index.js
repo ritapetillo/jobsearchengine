@@ -5,6 +5,7 @@ import {
   NO_RESULTS,
   RESET_RESULTS,
 } from "../actions/types";
+import {combineReducers} from 'redux'
 
 const reducer = (state = {}, { type, payload }) => {
   console.log(payload);
@@ -49,5 +50,7 @@ const reducer = (state = {}, { type, payload }) => {
       return state;
   }
 };
+
+
 
 export default reducer;
