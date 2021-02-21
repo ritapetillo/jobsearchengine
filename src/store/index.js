@@ -3,6 +3,10 @@ import rootReducer from "../reducers";
 import thunk from "redux-thunk";
 
 const initialState = {
+  user:{
+    isLogged:false,
+    profile:{}
+  },
   favorites: [],
   current: {
     jobs: [],

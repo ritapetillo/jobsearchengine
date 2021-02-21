@@ -4,12 +4,31 @@ import {
   REMOVE_FROM_FAVORITE,
   NO_RESULTS,
   RESET_RESULTS,
+  LOGIN,
+  LOGOUT,
 } from "../actions/types";
 import {combineReducers} from 'redux'
 
 const reducer = (state = {}, { type, payload }) => {
   console.log(payload);
   switch (type) {
+
+    case LOGIN:
+      return{
+        ...state,
+        user:{
+          isLogged:true,
+          profile:payload
+        }
+      };
+      case LOGOUT:
+        return{
+          ...state,
+          user:{
+            isLogged:false,
+            profile:{}
+          }
+        }
     case SEARCH_JOBS:
       return {
         ...state,

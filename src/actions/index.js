@@ -4,8 +4,10 @@ import {
   REMOVE_FROM_FAVORITE,
   NO_RESULTS,
   RESET_RESULTS,
+  LOGIN,
+  LOGOUT,
 } from "./types";
-import { fetchJobResults } from "../Utils/fetches";
+import { fetchJobResults, getUserInfo, logout } from "../Utils/fetches";
 
 export const searchJobs = (position, location) => async (dispatch) => {
   try {
@@ -17,7 +19,7 @@ export const searchJobs = (position, location) => async (dispatch) => {
       dispatch(noResults("There are no results for this location/position"));
     }
     dispatch({
-      type: SEARCH_JOBS,
+      type: SEARCH_JOBS, 
       payload: { jobs, position, location },
     });
   } catch (err) {}
@@ -48,3 +50,37 @@ export const resetResults = () => (dispatch) => {
     type: RESET_RESULTS,
   });
 };
+
+export const logUserIn = () => async dispatch =>{
+//when i get redirected from google to my page, i want to grab the user cookies, fetch /me route and grab the user information
+try{
+  const user = await getUserInfo()
+//if I get the user I want to send a payload to redux store with
+//isLogged: true and the user information
+//only if I have an user, i'll dispatch the login action
+if(user)
+dispatch({
+type:LOGIN,
+payload:user
+})
+
+} catch(err){
+  console.log(err)
+}
+}
+
+
+export const logUserOut = () => async dispatch =>{
+  try{
+    //I'm logging the user out
+    const logoutUser = await logout()
+
+//update the reduc store
+  dispatch({
+    type:LOGOUT
+  })
+  
+  } catch(err){
+    console.log(err)
+  }
+  }
