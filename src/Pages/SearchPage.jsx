@@ -29,6 +29,7 @@ const SearchPage = ({ current, search, error_msg }) => {
   useEffect(() => {
     setLocation(city);
     console.log(current);
+    console.log("ciao");
     // setCountry(country);
     // console.log(country);
   }, []);
